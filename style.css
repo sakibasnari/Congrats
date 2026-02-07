@@ -7,49 +7,88 @@ body {
 
 .center {
     text-align: center;
-    padding: 60px 20px;
+    padding: 30px 15px;
 }
 
 .card {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 25px;
+    border-radius: 18px;
     max-width: 900px;
+    width: 95%;
     margin: auto;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    animation: pop 1s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: pop 0.8s ease;
 }
 
 @keyframes pop {
-    from {transform: scale(.6); opacity:0}
+    from {transform: scale(.8); opacity:0}
     to {transform: scale(1); opacity:1}
 }
 
-h1 { font-size: 40px; margin-bottom: 10px; }
-h2 { color: #ff4d6d; }
+h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ff4d6d;
+    font-size: 22px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Buttons */
 
 .btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 14px 30px;
-    background: #ff4d6d;
+    margin-top: 20px;
+    padding: 14px 26px;
+    background: linear-gradient(45deg,#ff4d6d,#ff758f);
     color: white;
     border-radius: 30px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: .3s;
 }
 
 .btn:hover {
-    background: #e63950;
     transform: scale(1.08);
 }
 
-/* floating gifts */
+/* Gallery */
+
+.gallery {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+    transition: .3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Falling gifts */
+
 .gift {
     position: fixed;
-    font-size: 30px;
     animation: fall linear infinite;
+    pointer-events: none;
 }
 
 @keyframes fall {
@@ -57,22 +96,31 @@ h2 { color: #ff4d6d; }
     to { transform: translateY(110vh); }
 }
 
-.gallery {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+/* Emoji heading */
+
+.fire-emoji {
+    font-size: 60px;
 }
 
-.gallery img {
-    width: 260px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    transition: .3s;
-}
+/* 📱 Mobile */
 
-.gallery img:hover {
-    transform: scale(1.1);
+@media (max-width: 600px) {
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 18px; }
+
+    .card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .fire-emoji {
+        font-size: 42px;
+    }
 }
